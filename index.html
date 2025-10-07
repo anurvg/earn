@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roadmap — Earn Online (Curated)</title>
+  <meta name="description" content="Curated list of free & legit survey / side-income apps. Created for you by u/pablowasdead" />
+  <style>
+    /* Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+    :root{
+      --bg:#070707;
+      --panel:#0f0f10;
+      --muted:#aeb0b6;
+      --accent:#ffcc00;
+      --glass: rgba(255,255,255,0.03);
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      --radius:14px;
+      --maxw:1100px;
+    }
+
+    /* Basic reset */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Space Grotesk',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(255,204,0,0.03), transparent 6%),
+        radial-gradient(900px 400px at 90% 90%, rgba(255,136,0,0.02), transparent 8%),
+        var(--bg);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:80px;
+      -webkit-touch-callout:none; /* iOS Safari */
+      -webkit-user-select:none;   /* Safari */
+      -khtml-user-select:none;
+      -moz-user-select:none;      /* Older Firefox */
+      -ms-user-select:none;       /* IE10+ */
+      user-select:none;           /* Standard */
+    }
+
+    /* subtle animated background noise */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent 20%);
+      pointer-events:none;
+      mix-blend-mode:overlay;
+      animation: bgshift 18s linear infinite;
+      opacity:0.55;
+    }
+    @keyframes bgshift{0%{transform: translateY(0)}50%{transform: translateY(-20px)}100%{transform: translateY(0)}}
+
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    header{
+      position:sticky;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:14px clamp(12px,4vw,40px);
+      backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(10,10,10,0.62), rgba(10,10,10,0.24));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      z-index:40;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      color:var(--accent);
+      font-weight:700;
+      letter-spacing:1px;
+      font-size:0.95rem;
+    }
+    .logo {
+      width:44px;height:44px;border-radius:10px;
+      display:inline-grid;place-items:center;
+      background:linear-gradient(180deg, rgba(255,204,0,0.15), rgba(255,136,0,0.06));
+      box-shadow: 0 6px 18px rgba(255,204,0,0.04), inset 0 -4px 10px rgba(0,0,0,0.6);
+      color:#0b0b0b;font-weight:700;
+      transform:rotate(-8deg);
+      font-size:1.1rem;
+    }
+
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:#dcdcdc;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px; font-size:0.93rem}
+    nav a:hover{background:rgba(255,255,255,0.02); color:var(--accent)}
+
+    .container{
+      max-width:var(--maxw);
+      margin:34px auto;
+      padding:0 18px;
+      display:block;
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:26px;
+      align-items:start;
+      margin-bottom:20px;
+    }
+
+    .hero-left{
+      padding:26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(255,255,255,0.02);
+      position:relative;
+      overflow:hidden;
+    }
+    .badge{
+      display:inline-block;
+      background:linear-gradient(90deg,var(--accent),#ff8a00);
+      color:#070707;padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px;font-size:0.85rem;
+      box-shadow:0 8px 20px rgba(255,204,0,0.06);
+    }
+
+    h1{
+      font-size:clamp(1.35rem, 2.1vw, 2.0rem);
+      margin:8px 0 10px;color:#fff; letter-spacing:0.4px;
+    }
+    p.lead{color:var(--muted);max-width:70ch;margin-bottom:14px;font-size:0.96rem}
+
+    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#ff8a00);
+      color:#070707;border:none;padding:12px 16px;border-radius:12px;font-weight:700;
+      cursor:pointer;text-decoration:none; display:inline-flex;align-items:center;gap:10px;
+      box-shadow:0 10px 30px rgba(255,204,0,0.12);
+      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+      font-size:0.95rem;
+    }
+    .btn:hover{transform:translateY(-4px); box-shadow:0 18px 42px rgba(255,136,0,0.16)}
+
+    .ghost{
+      background:transparent;border:1px solid rgba(255,255,255,0.04);
+      color:var(--muted); padding:10px 14px;border-radius:12px;font-weight:600;
+      font-size:0.92rem;
+    }
+
+    .hero-right{
+      padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.02);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+      display:flex;flex-direction:column;gap:12px;
+      min-height:140px;
+    }
+    .mini-title{color:var(--accent);font-weight:700;font-size:0.95rem}
+    .progress{
+      display:flex;gap:10px;align-items:center;justify-content:space-between;
+      background:var(--glass); padding:12px;border-radius:10px;
+    }
+    .progress .k{font-weight:700;font-size:1.02rem}
+    .small{font-size:0.88rem;color:var(--muted)}
+
+    /* GRID */
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+      transition: transform .36s cubic-bezier(.2,.9,.3,1), box-shadow .36s;
+      position:relative; overflow:hidden;
+      display:flex;flex-direction:column; justify-content:space-between;
+      min-height:210px;
+    }
+    .card:hover{ transform: translateY(-10px) scale(1.02); box-shadow: 0 30px 70px rgba(0,0,0,0.7) }
+
+    .card .title{font-weight:700;color:var(--accent);margin-bottom:8px;font-size:1.05rem}
+    .card .desc{color:var(--muted);font-size:0.94rem;margin-bottom:14px;flex:1}
+    .tags{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+    .tag{font-size:0.78rem;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    .visit{
+      display:flex;justify-content:flex-end;align-items:center;gap:12px;margin-top:12px;
+    }
+    .visit a{flex:0 0 48%}
+    .visit .linkbtn{
+      width:100%;
+      padding:11px;border-radius:10px;border:none;font-weight:700;
+      background:linear-gradient(90deg,var(--accent),#ff8a00);color:#070707;text-decoration:none;
+      transition:transform .22s;
+      display:inline-block;text-align:center;font-size:0.95rem;
+    }
+    .visit .linkbtn:hover{transform:translateY(-6px)}
+
+    .glow{
+      position:absolute;right:-40px;top:-40px;height:150px;width:150px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(255,204,0,0.12), transparent 25%),
+                 radial-gradient(circle at 70% 70%, rgba(255,136,0,0.06), transparent 15%);
+      filter: blur(22px); transform:rotate(12deg); pointer-events:none;
+    }
+
+    .note{margin-top:18px;color:var(--muted);font-size:0.95rem;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+    /* contact / credits */
+    .contact-card{
+      margin-top:22px;padding:16px;background:var(--panel);border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow: var(--card-shadow);
+    }
+
+    footer{
+      margin-top:36px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border:1px solid rgba(255,255,255,0.02);
+      text-align:center;color:var(--muted);font-size:0.92rem;
+      max-width:var(--maxw);
+      margin-left:auto;margin-right:auto;margin-top:40px;padding-bottom:48px;
+    }
+    footer strong{color:var(--accent)}
+
+    /* responsive tweaks */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{order:2;display:flex}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header{padding:12px}
+      .grid{grid-template-columns:1fr}
+      .hero-left{padding:16px}
+      .hero-right{display:none}
+      .card{min-height:170px}
+      .visit a{flex:1}
+      .visit .linkbtn{font-size:0.92rem;padding:10px}
+      nav{display:none} /* tidy on small screens */
+    }
+
+    /* subtle entrance animations */
+    .fadeInUp{opacity:0;transform:translateY(10px);animation:inUp .6s forwards}
+    .fadeInUp.delay1{animation-delay:0.08s}
+    .fadeInUp.delay2{animation-delay:0.16s}
+    .fadeInUp.delay3{animation-delay:0.28s}
+    @keyframes inUp{to{opacity:1;transform:none}}
+
+    /* accessibility: focus outlines for keyboard users */
+    .btn:focus, .linkbtn:focus, .ghost:focus { outline:3px solid rgba(255,204,0,0.14); outline-offset:3px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#top" aria-label="Roadmap Home">
+      <span class="logo">R</span>
+      ROADMAP — EARN ONLINE
+    </a>
+
+    <nav aria-label="Primary">
+      <a href="#top">Home</a>
+      <a href="#list">Roadmap</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container" id="top">
+    <!-- HERO -->
+    <section class="hero fadeInUp">
+      <div class="hero-left">
+        <span class="badge">Free • No Investment</span>
+        <h1>Start earning online — curated & organized</h1>
+        <p class="lead">A compact roadmap of survey & side-income platforms. Each card shows a short description and a direct button — links are exactly as you supplied.</p>
+
+        <!-- TreeLogic tagline (added exactly as requested) -->
+        <p class="tree-essence" style="color:#3cc39b;margin-top:8px;font-weight:600;">Built under TreeLogic — A collective of digital minds.</p>
+
+        <div class="cta-row" style="margin-top:12px;">
+          <a class="btn" href="#list">Explore Roadmap</a>
+          <a class="ghost" href="#contact">Suggest a site</a>
+        </div>
+
+        <div class="note" style="margin-top:14px">
+          <div style="display:flex;gap:10px;align-items:center">
+            <span style="font-weight:700;color:var(--accent)">Curated:</span>
+            <span class="small">Survey apps • micro-tasks • data apps</span>
+          </div>
+          <div style="font-size:0.85rem;color:var(--muted)">Links are unmodified — as instructed</div>
+        </div>
+      </div>
+
+      <aside class="hero-right fadeInUp delay1" aria-hidden="true">
+        <div class="mini-title">Snapshot</div>
+        <div class="progress" style="margin-top:8px">
+          <div>
+            <div class="k">6 Platforms</div>
+            <div class="small">Survey & side-income apps</div>
+          </div>
+          <div style="text-align:right">
+            <div class="k">Free</div>
+            <div class="small">No upfront payment</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.02);font-weight:700">Surveys</div>
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.02)">Apps</div>
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.02)">Passive</div>
+        </div>
+
+        <div style="margin-top:auto;padding-top:12px;color:var(--muted);font-size:0.9rem">
+          Tip: use a dedicated email, enable 2FA where available, and check payout terms.
+        </div>
+      </aside>
+    </section>
+
+    <!-- LIST / GRID -->
+    <section id="list" class="fadeInUp delay2" style="margin-top:6px">
+      <div class="grid">
+        <!-- 1 Ipsosisay -->
+        <article class="card" aria-labelledby="t-ipsos">
+          <div class="glow" aria-hidden="true"></div>
+          <div>
+            <div id="t-ipsos" class="title">Ipsosisay</div>
+            <div class="desc">Ipsos iSay is a survey platform that rewards users for completing opinion surveys. Good for casual earnings — payouts usually via gift cards or PayPal (check availability by region).</div>
+            <div class="tags">
+              <span class="tag">Survey</span>
+              <span class="tag">Micro-earn</span>
+              <span class="tag">Free</span>
+            </div>
+          </div>
+          <div class="visit">
+            <a href="https://www.ipsosisay.com/en-in/referral/a4c90130-9d52-11f0-a833-6f14141c42bc" target="_blank" rel="noopener noreferrer" aria-label="Visit Ipsosisay">
+              <span class="linkbtn">Ipsosisay</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2 Grabpoints -->
+        <article class="card" aria-labelledby="t-grab">
+          <div>
+            <div id="t-grab" class="title">Grabpoints</div>
+            <div class="desc">GrabPoints offers surveys, videos, and small tasks that pay in points redeemable for PayPal, gift cards, or crypto. Best for users who complete multiple small activities daily.</div>
+            <div class="tags">
+              <span class="tag">Surveys</span>
+              <span class="tag">Tasks</span>
+              <span class="tag">Rewards</span>
+            </div>
+          </div>
+          <div class="visit">
+            <a href="https://grabpoints.com?ref=9J9WT4" target="_blank" rel="noopener noreferrer" aria-label="Visit GrabPoints">
+              <span class="linkbtn">Grabpoints</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3 Measure Protocol -->
+        <article class="card" aria-labelledby="t-measure">
+          <div>
+            <div id="t-measure" class="title">Measure Protocol (Contributor)</div>
+            <div class="desc">An app that pays users for sharing data and participating in research. Emphasizes privacy and secure handling of contributor data — useful for passive earnings when you allow data collection.</div>
+            <div class="tags">
+              <span class="tag">Data</span>
+              <span class="tag">Passive</span>
+              <span class="tag">Secure</span>
+            </div>
+          </div>
+          <div class="visit">
+            <a href="https://contributor.measureprotocol.com/i/aHu0TIwm" target="_blank" rel="noopener noreferrer" aria-label="Visit Measure Protocol">
+              <span class="linkbtn">Measure Protocol</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4 Attapol -->
+        <article class="card" aria-labelledby="t-attapol">
+          <div>
+            <div id="t-attapol" class="title">Attapol</div>
+            <div class="desc">AttaPoll is a mobile-first survey app focused on short surveys and quick payouts — popular for side income. Very handy when you want short tasks on the go.</div>
+            <div class="tags">
+              <span class="tag">App</span>
+              <span class="tag">Short Surveys</span>
+              <span class="tag">Side Income</span>
+            </div>
+          </div>
+          <div class="visit">
+            <a href="https://attapoll.app/join/sxryk" target="_blank" rel="noopener noreferrer" aria-label="Visit Attapoll">
+              <span class="linkbtn">Attapol</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5 Rakutan insight -->
+        <article class="card" aria-labelledby="t-rakutan">
+          <div>
+            <div id="t-rakutan" class="title">Rakutan insight</div>
+            <div class="desc">Rakuten Insight collects consumer feedback and offers rewards for surveys. Region availability can affect rewards — register and verify payout methods in your dashboard.</div>
+            <div class="tags">
+              <span class="tag">Survey</span>
+              <span class="tag">Rewards</span>
+              <span class="tag">Trusted</span>
+            </div>
+          </div>
+          <div class="visit">
+            <a href="https://member.insight.rakuten.co.in/home" target="_blank" rel="noopener noreferrer" aria-label="Visit Rakuten Insight">
+              <span class="linkbtn">Rakutan insight</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6 Primeopion -->
+        <article class="card" aria-labelledby="t-prime">
+          <div>
+            <div id="t-prime" class="title">Primeopion</div>
+            <div class="desc">PrimeOpinion provides surveys and research tasks that reward active contributors. Good for consistent survey takers — always check minimum payout thresholds before redeeming.</div>
+            <div class="tags">
+              <span class="tag">Survey</span>
+              <span class="tag">Payouts</span>
+              <span class="tag">Consistent</span>
+            </div>
+          </div>
+          <div class="visit">
+            <a href="https://primeopinion.com/register?ref=a008755f-52f5-418f-87d9-6bc04c0666e5" target="_blank" rel="noopener noreferrer" aria-label="Visit PrimeOpinion">
+              <span class="linkbtn">Primeopion</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- quick footer note inside section -->
+      <div style="margin-top:16px;color:var(--muted);font-size:0.95rem">
+        <strong>How to use:</strong> Pick a platform, sign up with a dedicated email, finish profile surveys to receive more invites, and check payout thresholds. Rotate platforms to keep steady opportunities.
+      </div>
+    </section>
+
+    <!-- contact / credits -->
+    <section id="contact" class="fadeInUp delay3">
+      <div class="contact-card">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+            <div>
+              <div style="font-weight:700;color:var(--accent)">Want to add more sites?</div>
+              <div style="color:var(--muted)">Send me the link & a one-line description.</div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center">
+              <a class="btn" href="#list">Suggest</a>
+              <a class="ghost" href="https://t.me/nirvainn" target="_blank" rel="noopener noreferrer" aria-label="Telegram Nirvainn">Telegram: @nirvainn</a>
+            </div>
+          </div>
+          <div style="color:var(--muted);font-size:0.92rem">Note: Always verify a platform's payout options and privacy policy before sharing personal info.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Created for you by <strong>u/pablowasdead</strong> — curated list. Links kept exactly as supplied. <span style="display:block;margin-top:8px;color:var(--muted)">Telegram: <a href="https://t.me/nirvainn" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none">@nirvainn</a></span>
+  </footer>
+
+  <!-- Minimal JS to make copying / selection / right-click harder (user asked it to be uncopyable).
+       Note: this only makes casual copying harder — it cannot fully prevent determined users or viewing source. -->
+  <script>
+    (function(){
+      // disable right click
+      document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+      // block common selection/copy keystrokes
+      document.addEventListener('keydown', function(e){
+        // Ctrl/Cmd + C / U / S / A / X / P
+        if ((e.ctrlKey || e.metaKey) && ['c','u','s','a','x','p'].includes(e.key.toLowerCase())) {
+          e.preventDefault();
+        }
+        // F12
+        if (e.key === 'F12') e.preventDefault();
+      });
+      // block selectstart and copy events
+      document.addEventListener('selectstart', function(e){ e.preventDefault(); });
+      document.addEventListener('copy', function(e){ e.preventDefault(); });
+      document.addEventListener('cut', function(e){ e.preventDefault(); });
+      document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+    })();
+  </script>
+</body>
+</html></html>
